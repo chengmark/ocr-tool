@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { createTheme, ThemeProvider } from '@mui/material';
+import Uploader from './components/Uploader';
+import { AuthProvider } from './context/AuthContext';
+import useAuth from './hook/useAuth';
+import Authenticator from './components/Authenticator';
+import { SnackbarProvider } from 'notistack';
 
-function App() {
+const theme = createTheme();
+
+const Content = () => {
+  const auth = useAuth();
+
+  if (auth?.user) return <Uploader />;
+
+  return <Authenticator />;
+};
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <SnackbarProvider
+      autoHideDuration={5000}
+      anchorOrigin={{ horizontal: 'center', vertical: 'bottom' }}
+    >
+      <ThemeProvider theme={theme}>
+        <AuthProvider>
+          <Content />
+        </AuthProvider>
+      </ThemeProvider>
+    </SnackbarProvider>
   );
-}
+};
 
 export default App;
