@@ -6,7 +6,7 @@ Available on https://ocr-tool-363013.web.app/
 
 ## Technology
 
-ReactJS - Web App Frontend
-Cloud Vision - Extract text from image
-Cloud Function - interact with Cloud Vision
-Firestore - store images
+- ReactJS - Web App Frontend
+- Cloud Vision - Extract text from image
+- Cloud Function - interact with Cloud Vision
+- Firestore - store images
