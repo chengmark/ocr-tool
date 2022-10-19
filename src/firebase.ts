@@ -4,7 +4,7 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyAh0SwGS-Twbv6sMzUOXl4-ziejgLpQHNA',
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: 'ocr-tool-363013.firebaseapp.com',
   databaseURL: 'https://ocr-tool-363013-default-rtdb.asia-southeast1.firebasedatabase.app',
   projectId: 'ocr-tool-363013',
