@@ -245,6 +245,7 @@ const Uploader = () => {
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
+                cursor: 'pointer',
               }}
             >
               <CloudUploadIcon sx={{ fontSize: '32px' }} />
